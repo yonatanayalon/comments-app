@@ -11,15 +11,9 @@ export class CommentService {
   private headers = new Headers({'Content-Type': 'application/json'});
   private commentesUrl = 'http://localhost:3000/comments';  // URL to web api
 
-  commentsMock: any = [
-      {id: 11, title: 'Mr. Nice', content:"walla kuala"},
-      {id: 12, title: 'Narco', content:"lorem walla 123 kuala"},
-      {id: 13, title: 'Bombasto', content:"WWW lorem walla 456 kuala"}
-    ];
-
   constructor(private http: Http) { }
 
-  getComments(): Promise<Comment[]> {
+  get(): Promise<Comment[]> {
     return this.http.get(this.commentesUrl)
                .toPromise()
                .then((response) => response.json() as Comment[])
