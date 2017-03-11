@@ -3,18 +3,6 @@ const app = express()
 const bodyParser = require('body-parser');
 const database = require('./database')
 
-// app.all('*', function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   //res.header("Access-Control-Allow-Headers", "X-Requested-With");
-//   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-//   next();
-//  });
-// app.use(function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//   next();
-// });
-
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -38,8 +26,6 @@ app.put('/comments/:id', function(req, res) {
 
 
 app.get('/comments', function (req, res) {
-  // res.header("Access-Control-Allow-Origin", "*");
-  // res.header("Access-Control-Allow-Headers", "X-Requested-With");  
   res.json(database.list())
 })
 
