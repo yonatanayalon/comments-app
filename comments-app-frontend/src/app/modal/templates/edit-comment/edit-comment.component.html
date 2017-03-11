@@ -1,0 +1,29 @@
+<div class="panel panel-success">
+    <div class="modal-header panel-heading">
+        <h3 class="modal-title" id="modal-title"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Comment</h3>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="cancel()">
+            <span aria-hidden="true">&times;</span>
+        </button>           
+    </div>
+    <div class="modal-body" id="modal-body">
+        <form #commentsForm="ngForm">
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" class="form-control" name="email" [(ngModel)]="comment.email" name="email" disabled/>
+            </div>
+            <div class="form-group">
+                <label>Content:</label>
+                <input type="text" class="form-control" name="content" [(ngModel)]="comment.comment" name="content" required #content="ngModel"/>
+                <div [hidden]="content.valid || content.pristine" class="alert alert-danger">Comment is required</div>                
+            </div>            
+        </form> 
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="ok('updateComment',comment, index)" [disabled]="!content.valid">
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Save
+        </button>
+        <button type="button" class="btn btn-default" (click)="cancel()">
+            <span class="glyphicon glyphicon-remove"></span> Cancel
+        </button>
+    </div>
+</div>
