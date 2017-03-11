@@ -1,0 +1,20 @@
+<div class="panel panel-danger">
+    <div class="modal-header panel-heading">
+        <h3 class="modal-title" id="modal-title"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Are you sure?</h3>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="cancel()">
+            <span aria-hidden="true">&times;</span>
+        </button>          
+    </div>
+    <div class="modal-body" id="modal-body">
+        You are about to delete Comment with email - 
+        "{{comment.email}}"
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-danger" type="button" (click)="ok('delete',comment, index)">
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Yes
+        </button>
+        <button class="btn btn-default" type="button" (click)="cancel()">
+            <span class="glyphicon glyphicon-remove"></span> No
+        </button>
+    </div>
+  </div>
