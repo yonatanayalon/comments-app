@@ -1,0 +1,9 @@
+<div bsModal #modal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" (onHide)="onHide()">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <confirm-delete *ngIf="confirmDelete" (userAction)="userAction($event)" [comment]="comment" [index]="currentIndex"></confirm-delete>
+      <edit-comment *ngIf="editComment" (userAction)="userAction($event)" [comment]="comment" [index]="currentIndex"></edit-comment>
+    </div>
+    
+  </div>
+</div>
