@@ -1,4 +1,6 @@
 # comments-app
+Shows a list of comments with the ability to Update / Delete a comment
+
 CRUD operations for Comments (without the "C")
 
 ## Installation Instructions
